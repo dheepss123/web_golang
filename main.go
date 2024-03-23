@@ -13,12 +13,9 @@ func main() {
 
 	//1. Homepage
 	http.HandleFunc("/", homecontroler.Welcome)
-	//2.Category
-	http.HandleFunc("/category", Categorycontroler.Index)
-	http.HandleFunc("/category/add", Categorycontroler.Add)
-	http.HandleFunc("/category/edit", Categorycontroler.Edit)
-	http.HandleFunc("/category/delete", Categorycontroler.Delete)
-	
+
+	// 2. Category
+
 	//3. Product
 	http.HandleFunc("/product", homecontroler.Welcome)
 
