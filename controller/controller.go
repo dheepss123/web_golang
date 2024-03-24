@@ -32,7 +32,7 @@ func Add(response http.ResponseWriter, request *http.Request) {
 		request.ParseForm()
 
 		var biodata entities.Biodata
-		biodata.Nama = request.Form.Get("nama_lengkap")
+		biodata.Nama = request.Form.Get("nama")
 		biodata.Nim = request.Form.Get("nim")
 		biodata.Prodi = request.Form.Get("prodi")
 		biodata.Divisi = request.Form.Get("divisi")

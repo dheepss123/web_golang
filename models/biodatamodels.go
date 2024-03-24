@@ -24,7 +24,7 @@ func NewBiodataModel() *BiodataModel {
 
 // Simpan data ke database
 func (p *BiodataModel) Create(biodata entities.Biodata) bool {
-	result, err := p.conn.Exec("INSERT INTO biodata(nama_lengkap, nim, prodi, divisi) values(?,?,?,?,?)", biodata.Nama, biodata.Nim, biodata.Prodi, biodata.Divisi)
+	result, err := p.conn.Exec("insert into biodata(nama, nim, prodi, divisi) values(?,?,?,?)", biodata.Nama, biodata.Nim, biodata.Prodi, biodata.Divisi)
 
 	if err != nil {
 		fmt.Print(err)

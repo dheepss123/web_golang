@@ -8,11 +8,10 @@ import (
 
 func DBConection() (*sql.DB, error) {
 	dbDriver := "mysql"
-	dbUser := "dheepss"
-	dbPass := "bangkit"
+	dbUser := "root"
+	dbPass := ""
 	dbName := "infinity"
 
 	db, err := sql.Open(dbDriver, dbUser+":"+dbPass+"@/"+dbName)
-
 	return db, err
 }
