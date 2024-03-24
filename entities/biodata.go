@@ -1,8 +1,9 @@
 package entities
 
 type Biodata struct {
-	Nim    int
+	Id     int64
 	Nama   string
+	Nim    string
 	Prodi  string
-	divisi string
+	Divisi string
 }

@@ -9,11 +9,11 @@ import (
 func main() {
 	// Controller
 	http.HandleFunc("/", controller.Index)
-	http.HandleFunc("/biodata/", controller.Index)
-	http.HandleFunc("/biodata/index/", controller.Index)
-	http.HandleFunc("/add/", controller.Add)
-	http.HandleFunc("/edit/", controller.Edit)
-	http.HandleFunc("/delete/", controller.Delete)
+	http.HandleFunc("/biodata", controller.Index)
+	http.HandleFunc("/biodata/index", controller.Index)
+	http.HandleFunc("/biodata/add", controller.Add)
+	http.HandleFunc("/biodata/edit", controller.Edit)
+	http.HandleFunc("/biodata/delete", controller.Delete)
 
 	// Runing server
 	server.Server()
