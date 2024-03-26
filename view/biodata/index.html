@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,24 +9,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Infinity</title>
-  </head>
-  <body>
-    <div class="container mt-5 ">
-        <h3>Biodata Infinity</h3>
-        <a href="/biodata/add" class="btn btn-sm btn-primary">Tambah Data</a>
-        <hr>
+</head>
+<body>
+<div class="container mt-5">
+    <h3>Biodata Infinity</h3>
+    <a href="/biodata/add" class="btn btn-sm btn-primary">Tambah Data</a>
+    <hr>
     <table class="table table-striped table-hover">
         <thead>
-            <tr>
-                <th>Nama</th>
-                <th>Nim</th>
-                <th>Prodi</th>
-                <th>Divisi</th>
-            </tr>
+        <tr>
+            <th>Nama</th>
+            <th>Nim</th>
+            <th>Prodi</th>
+            <th>Divisi</th>
+            <th>Aksi</th>
+        </tr>
         </thead>
         <tbody>
-          <!-- Baris tabel akan diisi dengan data dari database -->
-      </tbody>
-    </div>
-  </body>
+        {{ range .biodata }}
+        <tr>
+            <td>{{.Nama}}</td>
+            <td>{{.Nim}}</td>
+            <td>{{.Prodi}}</td>
+            <td>{{.Divisi}}</td>
+            <td>
+                <a href="/biodata/edit?id={{.Id}}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="/biodata/delete?id={{.Id}}" onclick="return confirm('Apakah anda yakin menghapus data ?')" class="btn btn-sm btn-danger">Hapus</a>
+            </td>
+        </tr>
+        {{ end }}
+        </tbody>
+    </table>
+</div>
+</body>
 </html>

@@ -19,7 +19,7 @@
 
   <body>
     <div class="container mt-5">
-      <h3>Tambah Data </h3>
+      <h3>Ubah biodata </h3>
       <a href="/biodata" class="btn btn-sm btn-primary mb-3">Lihat Data</a>
       <hr>
 
@@ -29,7 +29,7 @@
           </div>
       {{ end }}
 
-      <form action="/biodata/add" method="post">
+      <form action="/biodata/edit" method="post">
         <div class="form-group">
           <label for="nama">Nama Lengkap</label>
           <input type="text" id="nama" name="nama" class="form-control {{ if .validation.Nama }} is-invalid {{ end }}">
@@ -62,7 +62,8 @@
           </div>
 
           <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">Simpan</button>
+            <input type="hidden" name= "id" value="{{ .biodata.Id}}">
+            <button class="btn btn-primary btn-block" type="submit">Ubah Data</button>
         </div>
       </form>
   </div>
